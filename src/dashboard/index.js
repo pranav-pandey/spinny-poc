@@ -26,7 +26,7 @@ class Dashboard extends Component {
       disabled: true,
       project: '',
       projects: [],
-      tasks: []
+      tasks: props.result ? props.result : []
     };
     this.timer = {};
     this.startTimer = this.startTimer.bind(this);
@@ -179,7 +179,7 @@ class Dashboard extends Component {
           <code>Previous tasks: </code>
             <List style={{border: '1px'}}>
             {
-              this.state.tasks.map((item, index) => {
+              this.state.tasks.map((item, index) => {                
                 return (
                   <React.Fragment key={index}>
                     <ListItem alignItems="flex-start">

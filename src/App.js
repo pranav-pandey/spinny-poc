@@ -15,7 +15,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      result: props.result
+      result: props.initialData
     };
   }
   render() {    
