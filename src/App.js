@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { Container, Input, Button } from '@material-ui/core';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
+import Login from './login';
+import Dashboard from './dashboard';
+import AuthRoute from './utils/authRoute';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      result: props.result
+    };
+  }
+  render() {    
+    return (
+      <Switch>
+        <React.Fragment>
+          <div className="App">
+            <header className="App-header">
+                <code>spinny POC</code>          
+            </header>
+            <Route exact path="/login" component={() => <Login />} />
+            <Route exact path="/" component={() => <Dashboard result={this.state.result} />} />
+          </div>
+        </React.Fragment>
+      </Switch>
+    )
+  }
 }
 
 export default App;
