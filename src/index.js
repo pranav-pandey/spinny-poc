@@ -6,8 +6,10 @@ import * as serviceWorker from './serviceWorker';
 import {
   BrowserRouter as Router
 } from 'react-router-dom';
+const response = window.__PRELOADED_STATE__;
+delete window.__PRELOADED_STATE__;
 
-ReactDOM.hydrate(<Router><App /></Router>, document.getElementById('root'));
+ReactDOM.hydrate(<Router><App initialData={response} /></Router>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

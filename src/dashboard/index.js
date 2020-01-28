@@ -16,7 +16,7 @@ import Select from '@material-ui/core/Select';
 
 
 class Dashboard extends Component {
-  constructor(props) {
+  constructor(props) {    
     super(props);
     this.state = {
       task: '',
@@ -25,8 +25,8 @@ class Dashboard extends Component {
       minutes: 0,
       disabled: true,
       project: '',
-      projects: [],
-      tasks: props.result ? props.result : []
+      projects: props.result.projects ? props.result.projects : [],
+      tasks: props.result.tasks ? props.result.tasks : []
     };
     this.timer = {};
     this.startTimer = this.startTimer.bind(this);
@@ -34,7 +34,7 @@ class Dashboard extends Component {
     this.counter = this.counter.bind(this);
     this.fetchTasks = this.fetchTasks.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.fetchTasks();
+    // this.fetchTasks();
   }
   async fetchTasks() {
     const res = await fetch('http://localhost:5000/', {
@@ -117,6 +117,8 @@ class Dashboard extends Component {
   };
 
   render() {    
+    console.log(this.state.tasks, "tasks");
+    
     return (
     <div>
       <React.Fragment>
