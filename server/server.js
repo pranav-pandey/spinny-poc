@@ -44,7 +44,7 @@ app.get('*', (req, res, next) => {
               /</g,
               '\\u003c'
             )}
-          </script>`
+            </script>`
           )
         )
       })

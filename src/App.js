@@ -14,15 +14,12 @@ import AuthRoute from './utils/authRoute';
 class App extends Component {
   constructor(props) {
     super(props);
-    console.log(props, "propsss");
     
     this.state = {
       result: props.initialData
     };
   }
-  render() {    
-    console.log(this.state.result, "result");
-    
+  render() {        
     return (
       <Switch>
         <React.Fragment>

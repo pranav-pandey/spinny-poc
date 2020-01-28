@@ -118,7 +118,6 @@ class Dashboard extends Component {
 
   render() {    
     console.log(this.state.tasks, "tasks");
-    
     return (
     <div>
       <React.Fragment>
