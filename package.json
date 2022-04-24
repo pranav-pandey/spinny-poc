@@ -15,7 +15,7 @@
     "ignore-styles": "^5.0.1",
     "isomorphic-fetch": "^2.2.1",
     "mongoose": "^5.8.9",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
